@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Europe Bus Reservation – Suggested URL Structure & Header Menu</title>
+<style>
+:root{--bg:#eef6fb;--card:#fff;--tx:#14213d;--mu:#5d6f86;--bd:#d6e4ef;--ac:#1496d2;--nv:#1c3f94;--or:#ff8a1d;--pe:#fde8da;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1a3a;--card:#13265a;--tx:#eaf2fb;--mu:#9db3cc;--bd:#264278;--ac:#1a9fe0;--nv:#8fc8ff;--pe:#3a2a24;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b1a3a;--card:#13265a;--tx:#eaf2fb;--mu:#9db3cc;--bd:#264278;--ac:#1a9fe0;--nv:#8fc8ff;--pe:#3a2a24;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.w{max-width:1100px;margin:0 auto;padding:18px 14px 40px}
+h1{font-size:24px;margin:0 0 4px;color:var(--nv)}h2{font-size:18px;margin:0 0 4px;color:var(--nv)}h3{margin:0 0 2px;font-size:16px}
+p.s{color:var(--mu);margin:0 0 14px}
+.top{display:flex;align-items:center;gap:12px;background:var(--ac);padding:12px 18px;color:#fff}
+.logo{background:#fff;color:#1c3f94;border:3px solid #1c3f94;border-radius:8px;padding:3px 12px;font:800 20px/1 system-ui,sans-serif;letter-spacing:.5px;display:flex;flex-direction:column}
+.logo small{font:700 9px/1.4 system-ui,sans-serif;color:#1496d2;letter-spacing:.8px;border-top:2px solid #ff8a1d;margin-top:2px;padding-top:2px}
+.sp{flex:1}.tag{background:var(--or);padding:7px 14px;border-radius:6px;font-weight:700;font-size:13px}
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tb{font:inherit;font-weight:600;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:10px 18px;border-radius:10px;cursor:pointer}
+.tb.on{background:var(--or);border-color:var(--or);color:#fff}
+.pn{display:none}.pn.on{display:block}
+.card{background:var(--card);border:1px solid var(--bd);border-top:3px solid var(--ac);border-radius:14px;padding:16px;margin-bottom:16px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}.chip{background:var(--pe);border:1px solid var(--bd);border-radius:20px;padding:3px 12px;font-size:13px}
+.built{display:flex;flex-wrap:wrap;gap:6px;align-items:flex-start;margin:10px 0 4px}
+.seg{display:flex;flex-direction:column;align-items:center;gap:4px}.seg code{color:#fff;padding:7px 12px;border-radius:8px;font:600 14px ui-monospace,monospace}
+.seg span{font-size:12px;color:var(--mu)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.sc{background:var(--card);border:1px solid var(--bd);border-top:4px solid;border-radius:12px;padding:14px}
+.sc p{color:var(--mu);margin:0 0 8px;font-size:13px}
+.u{display:flex;flex-wrap:wrap;gap:2px 10px;align-items:baseline;padding:3px 0;border-top:1px dashed var(--bd)}
+.u code{font:600 12.5px ui-monospace,monospace;overflow-wrap:anywhere}.u span{color:var(--mu);font-size:12px}
+.new{background:var(--or);color:#fff;font-size:10px;font-weight:700;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+ul.r{margin:6px 0 0;padding-left:20px}ul.r li{margin:3px 0}
+table{border-collapse:collapse;width:100%;font-size:13px}td,th{border-bottom:1px solid var(--bd);padding:7px 8px;text-align:left;overflow-wrap:anywhere}th{color:var(--mu);font-weight:600}td code{font:12.5px ui-monospace,monospace}td:first-child code{color:var(--mu)}
+.tw{overflow-x:auto}
+select{font:inherit;padding:8px 12px;border:1px solid var(--bd);border-radius:9px;background:var(--card);color:var(--tx)}
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0 16px;margin-top:8px}
+summary{cursor:pointer;font-weight:600;margin-top:10px}
+.hdr{background:var(--ac);border-radius:12px;color:#fff;position:relative}
+.hr{display:flex;align-items:center;gap:14px;padding:12px 16px;flex-wrap:wrap;font-size:14px}
+.nav{display:flex;gap:2px;flex-wrap:wrap;align-items:center;padding:4px 10px 8px;border-top:1px solid #ffffff40}
+.nav .m{position:relative}.nav .m.mg{position:static}
+.nav .m>a{display:block;padding:10px 12px;font-weight:600;cursor:pointer;border-radius:8px;color:#fff}
+.nav .m:hover>a,.nav .m.open>a{background:#ffffff2b}
+.nav .btn>a{background:var(--or);margin-left:6px}
+.dd{display:none;position:absolute;top:100%;left:0;min-width:250px;background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:10px;box-shadow:0 12px 30px #0004;padding:6px;z-index:5}
+.m:hover>.dd,.m.open>.dd{display:block}.dd.big{left:0;right:0;gap:12px;padding:10px}.m:hover>.dd.big,.m.open>.dd.big{display:flex}
+.dd a{display:block;padding:7px 10px;border-radius:6px;cursor:pointer;font-size:14px}.dd a:hover{background:var(--bg);color:var(--ac)}
+.cl{width:200px;max-height:320px;overflow:auto;border-right:1px solid var(--bd)}.cr{flex:1;max-height:320px;overflow:auto}
+.cr .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}.cr b{display:block;padding:6px 10px;color:var(--mu);font-size:12px;text-transform:uppercase}
+#st{margin-top:12px;font:13px ui-monospace,monospace;color:var(--mu);overflow-wrap:anywhere}#st i{color:var(--ac);font-style:normal}
+</style></head><body>
+<header class="top"><span class="logo">EUROPE<small>BUS RESERVATION</small></span><span class="sp"></span><span class="tag">SUGGESTED STRUCTURE</span></header>
+<div class="w">
+<h1 style="margin-top:18px">Suggested Website Structure</h1>
+<p class="s">How our page URLs should look, and how they fit into the header menu.</p>
+<div class="tabs"><button class="tb on" data-t="p1">1. URL Structure</button><button class="tb" data-t="p2">2. Header Menu</button></div>
+
+<div class="pn on" id="p1">
+<div class="card"><h2>How a URL is built</h2><p class="s" style="margin:0">Every URL follows one simple path, from the general to the specific.</p>
+<div class="built"><div class="seg"><code style="background:#16a34a">/destinations/</code><span>Section</span></div><div class="seg"><code style="background:#1c3f94">france/</code><span>Country</span></div><div class="seg"><code style="background:#1496d2">paris/</code><span>City</span></div><div class="seg"><code style="background:#d97706">prices/</code><span>Page group</span></div><div class="seg"><code style="background:#8b5cf6">weddings/</code><span>Page</span></div></div></div>
+
+<div class="card"><h2>Before and after</h2><div class="tw"><table><thead><tr><th>Current URL (flat)</th><th>Suggested URL</th></tr></thead><tbody>
+<tr><td><code>/minibus-coach-hire-paris.html</code></td><td><code>/destinations/france/paris/</code></td></tr>
+<tr><td><code>/coach-minibus-hire-prices-wedding-paris.html</code></td><td><code>/destinations/france/paris/prices/weddings/</code></td></tr>
+<tr><td><code>/bus-hire-service-transfer-europe-uk.html</code></td><td><code>/services/transfers/</code></td></tr></tbody></table></div></div>
+
+<div class="card"><h2>URL rules</h2><ul class="r"><li>Use lowercase letters only, with hyphens between words (<code>private-coach-hire</code>).</li><li>Do not end URLs with <code>.html</code>. End them with a slash (<code>/services/</code>).</li><li>Use plain English words only. No codes or language prefixes.</li><li>Group pages into folders: Section › Country › City › Page.</li><li>Redirect every old URL to its new URL with a 301 redirect, so no page is lost.</li></ul></div>
+
+<h2>Main sections</h2><div class="chips" id="stats"></div>
+<div class="grid" id="secs"></div>
+
+<div class="card" style="margin-top:16px"><h2>Destinations explorer</h2><p class="s">Pick a country to see its city URLs.</p>
+<select id="co" onchange="exp()"></select><div class="cg" id="cu"></div>
+<details><summary>Pages under every top city (example: Paris)</summary><p class="s" style="margin:6px 0 0">These 8 cities get a full set of pages: Paris, Amsterdam, London, Nice, Barcelona, Milan, Edinburgh and Brussels.</p><div class="cg" id="tp"></div></details></div>
+</div>
+
+<div class="pn" id="p2"><div class="card"><h2>Suggested header menu</h2><p class="s">Hover over (or tap) a menu item. The page URL it opens appears below the menu. Under Destinations, choose a country to see its cities (★ = top city with a full set of pages).</p>
+<div class="hdr"><div class="hr"><span class="logo">EUROPE<small>BUS RESERVATION</small></span><span class="sp"></span><span>+44 (0) 203 642 6336</span><span>booking@europebusreservation.com</span></div><nav class="nav" id="nav"></nav></div>
+<div id="st">Hover over a menu item…</div></div></div>
+</div>
+<script>
+const $=id=>document.getElementById(id),cap=s=>s.split('-').map(w=>w[0].toUpperCase()+w.slice(1)).join(' ');
+const CO=[['belgium','brussels,antwerp,bruges,charleroi,namur'],['france','paris,nice,lyon,corsica:ajaccio+bastia+calvi+porto-vecchio,amiens,bordeaux,caen,cannes,carcassonne,cholet,grenoble,le-havre,lille,macon,marseille,nantes,rennes,rouen,strasbourg,tours'],['ireland','dublin,cork,dundalk,galway,limerick'],['italy','florence,rome,milan,como,genoa,pisa,turin,varese,verona,sardinia:cagliari+nuoro+olbia+oristano+sassari,sicily:catania+marsala+palermo+syracuse'],['luxembourg','luxembourg-city'],['monaco',''],['netherlands','amsterdam,baarlo,eindhoven,the-hague,rotterdam,utrecht,zwolle'],['portugal','lisbon,carvoeiro,cascais,coimbra,evora,guimaraes,obidos,porto,tavira'],['spain','barcelona,madrid,alicante,almeria,benidorm,bilbao,burgos,cadiz,cartagena,cordoba,girona,granada,malaga,marbella,murcia,santiago-de-compostela,salamanca,sevilla,tarragona,toledo,valencia,valladolid,vigo'],['switzerland','zurich,basel,bern,davos,geneva,lausanne,lugano,montreux'],['united-kingdom','london,edinburgh,bath,birmingham,cardiff,dover,glasgow,leeds,leicester,manchester,newcastle,southampton'],['austria','graz,innsbruck,salzburg,vienna,voralberg'],['croatia','dubrovnik,rovinj,sibenik,split,zadar,zagreb'],['czech-republic','prague,brno,cesky-krumlov,karlovy-vary,ostrava,turnov'],['denmark','aalborg,aarhus,copenhagen,esbjerg,skagen'],['finland','helsinki,oulu,tampere,turku,vaasa'],['germany','berlin,dusseldorf,frankfurt,hamburg,munich,nuremberg,stuttgart'],['greece','alexandroupoli,athens,larissa,thessaloniki,trikala,tripoli'],['hungary','budapest,eger,gyor,siofok,tokaj'],['norway','alesund,oslo,stavanger,tromso,trondheim'],['poland','gdansk,krakow,tatras,warsaw,wroclaw,zakopane'],['sweden','gothenburg,malmo,orebro,stockholm']];
+const TOP=['paris','amsterdam','london','nice','barcelona','milan','edinburgh','brussels'];
+const T=[['about-us','About Us'],['services/private-coach-hire','Private Coach Hire'],['services/minibus-with-driver','Minibus with Driver'],['services','All Services'],['services/transfers','Transfers'],['services/day-trips','Day Trips'],['services/multi-day-tours','Multi-Day Tours'],['prices','Prices Overview'],['prices/airport-station-transfer','Airport & Station Transfer'],['prices/city-transfer','City Transfer'],['prices/tourism-trips','Tourism Trips'],['prices/corporate-travel','Corporate Travel'],['prices/school-trips','School Trips'],['prices/event-transport','Event Transport'],['prices/sporting-events','Sporting Events'],['prices/weddings','Weddings'],['prices/music-tours-shows','Music Tours & Shows'],['about-us/our-commitments','Our Commitments']];
+const IN=[['information/local-service','Local Service'],['information/partnerships','Partnerships'],['information/driving-regulations','Driving Regulations'],['information/faq','FAQ']];
+const P=i=>'/'+T[i][0]+'/',tok=co=>co[1].split(',').filter(Boolean).map(t=>t.includes(':')?{r:t.split(':')[0],cs:t.split(':')[1].split('+')}:{c:t});
+const ls=(a,i)=>a.map(x=>[P(x),T[x][1],i]);
+const SEC=[
+{t:'Home',c:'#1496d2',d:'Main landing page.',l:[['/','Home',0]]},
+{t:'About Us',c:'#8b5cf6',d:'Company and trust pages.',l:[[P(0),'About Us',0],[P(17),'Our Commitments',1]]},
+{t:'Services',c:'#2563eb',d:'What we offer.',l:[[P(3),'All Services',0],...ls([1,2,4,5,6],1)]},
+{t:'Fleet',c:'#7c3aed',d:'New page for the vehicles we offer.',n:1,l:[['/fleet/','Fleet',0]]},
+{t:'Prices',c:'#d97706',d:'Prices by type of trip.',l:[[P(7),'Prices Overview',0],...ls([8,9,10,11,12,13,14,15,16],1)]},
+{t:'Destinations',c:'#16a34a',d:'One page per country and per city.',l:[['/destinations/','All Destinations',0],['/destinations/{country}/','Country page',1],['/destinations/{country}/{city}/','City page',2]]},
+{t:'Information',c:'#0d9488',d:'Help and guidance pages.',l:IN.map(x=>['/'+x[0]+'/',x[1],0])},
+{t:'Contact',c:'#dc2626',d:'Contact and quote requests.',l:[['/contact/','Contact',0]]},
+{t:'Legal',c:'#64748b',d:'Legal pages.',l:[['/legal/terms/','Terms',0],['/legal/privacy/','Privacy',0]]}];
+$('secs').innerHTML=SEC.map(s=>`<div class="sc" style="border-top-color:${s.c}"><h3 style="color:${s.c}">${s.t}${s.n?'<span class="new">NEW</span>':''}</h3><p>${s.d}</p>${s.l.map(([u,n,i])=>`<div class="u" style="margin-left:${i*16}px"><code>${u}</code><span>${n}</span></div>`).join('')}</div>`).join('');
+const nc=CO.reduce((a,co)=>a+tok(co).reduce((b,t)=>b+(t.c?1:t.cs.length),0),0);
+$('stats').innerHTML=`<span class="chip">${SEC.length} main sections</span><span class="chip">${CO.length} countries</span><span class="chip">${nc} cities</span><span class="chip">${TOP.length} top cities with full pages</span>`;
+$('co').innerHTML=CO.map((c,i)=>`<option value="${i}">${cap(c[0])}</option>`).join('');$('co').value=1;
+function exp(){const co=CO[$('co').value],b='/destinations/'+co[0]+'/',r=[[b,cap(co[0])+' page']];
+ tok(co).forEach(t=>{if(t.c)r.push([b+t.c+'/',cap(t.c)+(TOP.includes(t.c)?' ★':'')]);else{const rb=b+t.r+'/';r.push([rb,cap(t.r)+' (region)']);t.cs.forEach(c=>r.push([rb+c+'/',cap(c)]))}});
+ $('cu').innerHTML=r.map(([u,n])=>`<div class="u"><code>${u}</code><span>${n}</span></div>`).join('')}
+exp();$('tp').innerHTML=T.map(t=>`<div class="u"><code>/destinations/france/paris/${t[0]}/</code></div>`).join('');
+const MENU=()=>{const dest=CO.map(co=>{const b='/destinations/'+co[0]+'/',k=[];tok(co).forEach(t=>{if(t.c)k.push([cap(t.c),b+t.c+'/',TOP.includes(t.c),0]);else{const rb=b+t.r+'/';k.push([cap(t.r),rb,0,1]);t.cs.forEach(c=>k.push([cap(c),rb+c+'/',0,0]))}});return[cap(co[0]),b,k]});
+ return[{t:'Home',u:'/'},{t:'About Us',k:[[T[0][1],P(0)],[T[17][1],P(17)],['Partnerships','/information/partnerships/']]},{t:'Services',k:[3,1,2,4,5,6].map(i=>[T[i][1],P(i)])},{t:'Fleet',u:'/fleet/',nw:1},{t:'Prices',k:[7,8,9,10,11,12,13,14,15,16].map(i=>[T[i][1],P(i)])},{t:'Destinations',mega:1,k:dest},{t:'Information',k:[0,2,3].map(i=>[IN[i][1],'/'+IN[i][0]+'/'])},{t:'Contact',u:'/contact/',btn:'Get a Quote'}]};
+const M=MENU(),DK=M.find(i=>i.mega).k;
+$('nav').innerHTML=M.map(i=>i.mega?`<div class="m mg"><a>${i.t} ▾</a><div class="dd big"><div class="cl">${i.k.map((c,j)=>`<a data-u="${c[1]}" onmouseenter="mc(${j})" onclick="mc(${j})">${c[0]}</a>`).join('')}</div><div class="cr" id="mc"></div></div></div>`:i.k?`<div class="m"><a>${i.t} ▾</a><div class="dd">${i.k.map(k=>`<a data-u="${k[1]}">${k[0]}</a>`).join('')}</div></div>`:`<div class="m ${i.btn?'btn':''}"><a data-u="${i.u}">${i.btn||i.t}${i.nw?'<span class="new">NEW</span>':''}</a></div>`).join('');
+function mc(j){const c=DK[j];$('mc').innerHTML=`<b>${c[0]}</b><a data-u="${c[1]}"><strong>All ${c[0]} →</strong></a><div class="g">${c[2].map(k=>`<a data-u="${k[1]}" ${k[3]?'style="font-weight:700"':''}>${k[2]?'★ ':''}${k[0]}</a>`).join('')}</div>`}mc(1);
+document.addEventListener('mouseover',e=>{const a=e.target.closest&&e.target.closest('[data-u]');if(a)$('st').innerHTML='🔗 <i>https://www.europebusreservation.com'+a.dataset.u+'</i>'});
+document.addEventListener('click',e=>{const m=e.target.closest&&e.target.closest('.nav .m');document.querySelectorAll('.nav .m.open').forEach(x=>x!=m&&x.classList.remove('open'));if(m)m.classList.toggle('open');const a=e.target.closest&&e.target.closest('[data-u]');if(a)$('st').innerHTML='🔗 <i>https://www.europebusreservation.com'+a.dataset.u+'</i>'});
+document.querySelectorAll('.tb').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tb').forEach(x=>x.classList.toggle('on',x==b));document.querySelectorAll('.pn').forEach(p=>p.classList.toggle('on',p.id==b.dataset.t))});
+</script></body></html>
